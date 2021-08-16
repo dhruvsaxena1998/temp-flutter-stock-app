@@ -7,16 +7,16 @@ class ThemeColors {
   static const Color warning = Color(0xFFf0cb47);
 
   // Primary
-  static const Color primaryLight = Color(0xFF3671FB);
+  static const Color primaryLight = Color(0xFF00AAFF);
   static const Color primaryDark = Color(0xFFF2682A);
   static const Color primaryBlack = Color(0xFFF35383);
 
   // Accent
   static const Color accent1 = Color(0xFF8a6ba5);
-  static const Color accent2 = Color(0xFFfe8781);
+  static const Color accent2 = Color(0xFFFF7700);
 
   // Background
-  static const Color backgroundLight = Color(0xFFE0E0E0);
+  static const Color backgroundLight = Color(0xFFD2D8E4);
   static const Color backgroundDark = Color(0xFF333F57);
   static const Color backgroundBlack = Color(0xFF323836);
 

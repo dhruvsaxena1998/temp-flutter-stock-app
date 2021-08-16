@@ -1,21 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:stokish_flutter/core/bottom_nav_bar.dart';
-import 'package:stokish_flutter/global/theme/app_theme.dart';
+import 'core/bottom_nav_bar.dart';
+import 'providers/theme_provider.dart';
+import 'widgets/info_card.dart';
 
-import 'package:stokish_flutter/global/theme/theme_data.dart';
-import 'package:stokish_flutter/providers/providers.dart';
-
-import 'package:stokish_flutter/providers/theme_provider.dart';
-
-import 'package:stokish_flutter/widgets/info_card.dart';
+import 'global/theme/app_theme.dart';
+import 'global/theme/theme_data.dart';
 
 void main() {
-  runApp(MultiProvider(
-    providers: providers,
-    child: const App(),
-  ));
+  runApp(ProviderScope(child: App()));
 }
 
 class App extends StatelessWidget {
@@ -23,24 +17,15 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = context.watch<ThemeProvider>().getAppTheme();
-
-    // return ChangeNotifierProvider(
-    //   create: (_) => ThemeProvider(Themes.light),
-    //   child: Consumer<ThemeProvider>(builder: (context, theme, _) {
-    //     return MaterialApp(
-    //       title: 'Flutter Demo',
-    //       theme: appTheme(theme.getAppTheme()),
-    //       home: const Home(),
-    //     );
-    //   }),
-    // );
-
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: appTheme(theme),
-      home: const Home(),
-      debugShowCheckedModeBanner: false,
+    return Consumer(
+      builder: (context, watch, _) {
+        return MaterialApp(
+          title: 'Flutter Demo',
+          theme: appTheme(AppTheme.getTheme(watch(themeController))),
+          home: const Home(),
+          debugShowCheckedModeBanner: false,
+        );
+      },
     );
   }
 }
@@ -74,21 +59,26 @@ class _HomeState extends State<Home> {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Consumer<ThemeProvider>(
-                  builder: (context, value, _) {
-                    final isLightTheme = value.getTheme() == Themes.light;
-
+                Consumer(
+                  builder: (context, watch, _) {
+                    final Themes theme = watch(themeController);
                     return IconButton(
                       onPressed: () {
-                        value.setAppTheme(
-                          isLightTheme ? Themes.dark : Themes.light,
-                        );
+                        context.read(themeController.notifier).updateTheme(
+                              theme == Themes.light
+                                  ? Themes.dark
+                                  : theme == Themes.dark
+                                      ? Themes.black
+                                      : Themes.light,
+                            );
                       },
                       icon: Icon(
-                        isLightTheme
+                        theme == Themes.light
                             ? Icons.mode_night_rounded
-                            : Icons.wb_sunny_rounded,
-                        color: value.getAppTheme().title,
+                            : theme == Themes.dark
+                                ? Icons.dark_mode
+                                : Icons.wb_sunny_rounded,
+                        color: Theme.of(context).iconTheme.color,
                       ),
                     );
                   },

@@ -55,4 +55,15 @@ class AppTheme {
     title: ThemeColors.titleBlack,
     body: ThemeColors.bodyBlack,
   );
+
+  static AppTheme getTheme(Themes theme) {
+    switch (theme) {
+      case Themes.light:
+        return AppTheme.light;
+      case Themes.dark:
+        return AppTheme.dark;
+      case Themes.black:
+        return AppTheme.black;
+    }
+  }
 }
