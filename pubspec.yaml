@@ -25,13 +25,12 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_riverpod: ^0.14.0+3
+  google_fonts: ^2.1.0
   google_nav_bar: ^5.0.5
-  provider: ^5.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  very_good_analysis: ^2.3.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -23,7 +23,6 @@ class BottomNavBar extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
           duration: const Duration(milliseconds: 300),
           tabBackgroundColor: Theme.of(context).backgroundColor,
-          color: Theme.of(context).primaryColor,
           tabs: const [
             GButton(
               icon: Icons.home,

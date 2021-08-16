@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:stokish_flutter/global/theme/app_theme.dart';
 
 ThemeData appTheme(AppTheme theme) {
@@ -9,9 +10,13 @@ ThemeData appTheme(AppTheme theme) {
     cardColor: theme.foreground,
     accentColor: theme.accent,
     textTheme: TextTheme(
-      headline6: TextStyle(color: theme.title),
-      bodyText1: TextStyle(color: theme.body),
-      bodyText2: TextStyle(color: theme.body),
+      headline6: GoogleFonts.fredokaOne(color: theme.title),
+      caption: GoogleFonts.inter(color: theme.body),
+      bodyText1: GoogleFonts.inter(color: theme.body),
+      bodyText2: GoogleFonts.inter(color: theme.body),
+    ),
+    iconTheme: IconThemeData(
+      color: theme.title,
     ),
   );
 }
