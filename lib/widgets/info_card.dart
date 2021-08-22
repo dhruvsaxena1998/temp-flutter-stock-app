@@ -84,8 +84,9 @@ class InfoCard extends StatelessWidget {
                       child: Text(
                         'Read more',
                         style: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontSize: 16),
+                          color: Theme.of(context).primaryColor,
+                          fontSize: 16,
+                        ),
                       ),
                     )
                   ],

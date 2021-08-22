@@ -18,6 +18,11 @@ final ThemeData light = ThemeData(
   backgroundColor: ThemeColors.backgroundLight,
   cardColor: ThemeColors.foregroundLight,
   accentColor: ThemeColors.accent1,
+  pageTransitionsTheme: const PageTransitionsTheme(
+    builders: <TargetPlatform, PageTransitionsBuilder>{
+      TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+    },
+  ),
   iconTheme: const IconThemeData(
     color: ThemeColors.titleLight,
   ),
@@ -51,11 +56,6 @@ final ThemeData light = ThemeData(
       color: ThemeColors.titleLight,
       fontWeight: FontWeight.bold,
     ),
-  ),
-  pageTransitionsTheme: const PageTransitionsTheme(
-    builders: <TargetPlatform, PageTransitionsBuilder>{
-      TargetPlatform.android: CupertinoPageTransitionsBuilder(),
-    },
   ),
 );
 

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:stokish_flutter/pages/home/home_page.dart';
 
 import 'global/theme/theme_data.dart';
 
 import 'providers/theme_provider.dart';
 import 'routes/routes.dart';
-import 'widgets/info_card.dart';
 
 void main() {
   runApp(const ProviderScope(child: App()));
@@ -45,32 +45,6 @@ class App extends StatelessWidget {
           routes: routes,
         );
       },
-    );
-  }
-}
-
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
-
-  @override
-  _HomeState createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      // appBar: HomeAppBar(context),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: Column(
-            children: const <Widget>[
-              InfoCard(),
-            ],
-          ),
-        ),
-      ),
     );
   }
 }
