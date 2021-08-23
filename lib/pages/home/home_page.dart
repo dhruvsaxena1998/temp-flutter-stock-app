@@ -14,15 +14,13 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: HomeAppBar(context),
       body: SafeArea(
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Column(
-            children: <Widget>[
-              HomeAppBar(context),
-              const InfoCard(),
-              const InfoCard(),
-              const InfoCard(),
+            children: const <Widget>[
+              InfoCard(),
             ],
           ),
         ),

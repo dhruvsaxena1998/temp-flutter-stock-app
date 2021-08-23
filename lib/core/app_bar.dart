@@ -11,7 +11,7 @@ PreferredSizeWidget _appBar(
     child: SafeArea(
       child: Container(
         width: double.infinity,
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         decoration: BoxDecoration(
           color: Theme.of(context).backgroundColor,
         ),
@@ -25,23 +25,47 @@ PreferredSizeWidget _appBar(
 PreferredSizeWidget HomeAppBar(BuildContext context) {
   return _appBar(
     context,
-    height: 70,
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    height: 100,
+    child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Column(
-          children: const <Widget>[
-            CircleAvatar(
-              backgroundImage: NetworkImage(Constants.avatar),
+        const SizedBox(
+          height: 10,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                InkWell(
+                  onTap: () {},
+                  child: const CircleAvatar(
+                    backgroundImage: NetworkImage(Constants.avatar),
+                  ),
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'Hi, John',
+                  style: Theme.of(context).textTheme.caption,
+                )
+              ],
+            ),
+            InkWell(
+              onTap: () {},
+              child: Icon(
+                Icons.menu,
+                color: Theme.of(context).iconTheme.color,
+              ),
             ),
           ],
         ),
-        InkWell(
-          onTap: () {},
-          child: Icon(
-            Icons.menu,
-            color: Theme.of(context).iconTheme.color,
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          child: Text(
+            'Welcome back ,',
+            style: Theme.of(context).textTheme.headline5,
           ),
         ),
       ],

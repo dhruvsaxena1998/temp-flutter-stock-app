@@ -23,28 +23,20 @@ class InfoCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Container(
-            decoration: BoxDecoration(
-              boxShadow: <BoxShadow>[
-                BoxShadow(
-                  color: Theme.of(context).backgroundColor,
-                  blurRadius: 20,
-                  offset: const Offset(5, 10),
-                ),
-              ],
-            ),
-            child: GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, '/settings');
-              },
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(25),
-                child: Image.network(
-                  Constants.placeholderImage,
-                  fit: BoxFit.cover,
-                  height: MediaQuery.of(context).size.height * 0.25,
-                  width: double.infinity,
-                ),
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/settings');
+            },
+            child: ClipRRect(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(25),
+                topRight: Radius.circular(25),
+              ),
+              child: Image.network(
+                Constants.placeholderImage,
+                fit: BoxFit.cover,
+                height: 200,
+                width: double.infinity,
               ),
             ),
           ),
@@ -56,7 +48,7 @@ class InfoCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     const SizedBox(
-                      height: 20,
+                      height: 10,
                     ),
                     Text(
                       'Supertrend x3',
@@ -77,7 +69,7 @@ class InfoCard extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       '2.00 PM - 19/02/2021',
-                      style: Theme.of(context).textTheme.caption,
+                      style: Theme.of(context).textTheme.subtitle2,
                     ),
                     TextButton(
                       onPressed: () {},
