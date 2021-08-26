@@ -29,7 +29,7 @@ class ThemeProvider extends StateNotifier<Themes> {
   Future<Themes> _getThemeFromStorage() async {
     await _init();
 
-    final String? theme = _perf?.getString(kAppTheme);
+    final String? theme = _perf?.getString(Strings.kAppTheme);
 
     if (theme == null || theme.isEmpty) return Themes.light;
 
@@ -44,7 +44,7 @@ class ThemeProvider extends StateNotifier<Themes> {
 
     switch (theme) {
       case Themes.light:
-        _perf?.setString(kAppTheme, kAppLightTheme);
+        _perf?.setString(Strings.kAppTheme, Strings.kAppThemeLight);
     }
   }
 }

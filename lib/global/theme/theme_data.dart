@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:stokish_flutter/global/theme/colors.dart';
+import 'package:stokish_flutter/utils/constants.dart';
 
 enum Themes { light }
 
@@ -29,27 +30,27 @@ final ThemeData light = ThemeData(
   textTheme: TextTheme(
     headline4: GoogleFonts.fredokaOne(
       color: ThemeColors.titleLight,
-      fontSize: 31.25,
+      fontSize: FontSize.headline4,
     ),
     headline5: GoogleFonts.fredokaOne(
       color: ThemeColors.titleLight,
-      fontSize: 25,
+      fontSize: FontSize.headline5,
     ),
     headline6: GoogleFonts.fredokaOne(
       color: ThemeColors.titleLight,
-      fontSize: 20,
+      fontSize: FontSize.headline6,
     ),
     bodyText1: GoogleFonts.inter(
       color: ThemeColors.bodyLight,
-      fontSize: 14,
+      fontSize: FontSize.bodyText1,
     ),
     bodyText2: GoogleFonts.inter(
       color: ThemeColors.bodyLight,
-      fontSize: 12.80,
+      fontSize: FontSize.bodyText2,
     ),
     subtitle2: GoogleFonts.inter(
       color: ThemeColors.bodyLight,
-      fontSize: 12.80,
+      fontSize: FontSize.subtitle2,
     ),
     button: GoogleFonts.inter(
       color: ThemeColors.titleLight,
@@ -57,7 +58,7 @@ final ThemeData light = ThemeData(
     ),
     caption: GoogleFonts.robotoMono(
       color: ThemeColors.bodyLight,
-      fontSize: 16,
+      fontSize: FontSize.caption,
     ),
   ),
 );

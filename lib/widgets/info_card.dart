@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:stokish_flutter/global/theme/theme_data.dart';
-import 'package:stokish_flutter/providers/theme_provider.dart';
 import 'package:stokish_flutter/utils/constants.dart';
 
 class InfoCard extends StatelessWidget {
@@ -9,17 +6,21 @@ class InfoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextTheme textTheme = Theme.of(context).textTheme;
+    final Color cardColor = Theme.of(context).cardColor;
+
     return Container(
-      margin: const EdgeInsets.all(20),
+      margin: const EdgeInsets.all(MagicNumbers.margin),
       decoration: BoxDecoration(
-          color: Theme.of(context).cardColor,
-          borderRadius: BorderRadius.circular(25),
-          boxShadow: <BoxShadow>[
-            BoxShadow(
-              color: Theme.of(context).cardColor,
-              blurRadius: context.read(themeController) == Themes.light ? 5 : 0,
-            )
-          ]),
+        color: cardColor,
+        borderRadius: BorderRadius.circular(MagicNumbers.borderRadius),
+        boxShadow: <BoxShadow>[
+          BoxShadow(
+            color: cardColor,
+            blurRadius: MagicNumbers.blurRadius,
+          )
+        ],
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -29,38 +30,40 @@ class InfoCard extends StatelessWidget {
             },
             child: ClipRRect(
               borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(25),
-                topRight: Radius.circular(25),
+                topLeft: Radius.circular(MagicNumbers.borderRadius),
+                topRight: Radius.circular(MagicNumbers.borderRadius),
               ),
               child: Image.network(
-                Constants.placeholderImage,
+                placeholderImage,
                 fit: BoxFit.cover,
-                height: 200,
+                height: MagicNumbers.cardImageHeight,
                 width: double.infinity,
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
+            padding: const EdgeInsets.symmetric(
+              horizontal: MagicNumbers.padding,
+            ),
             child: Column(
               children: <Widget>[
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     const SizedBox(
-                      height: 10,
+                      height: MagicNumbers.sizedBoxHeight,
                     ),
                     Text(
                       'Supertrend x3',
-                      style: Theme.of(context).textTheme.headline6,
+                      style: textTheme.headline6,
                     ),
                     const SizedBox(
-                      height: 10,
+                      height: MagicNumbers.sizedBoxHeight,
                     ),
                     Text(
                       // ignore: lines_longer_than_80_chars
                       'Lorem ipsum dolor sit amet consectetur adipisicing elit.Porro laboriosam recusandae dolorum libero. Nostrum rem earum, consequuntur odio eligendi nesciunt ab dolor? Sint possimus ipsa alias molestias? Reprehenderit, consequatur nisi.',
-                      style: Theme.of(context).textTheme.bodyText1,
+                      style: textTheme.bodyText1,
                     ),
                   ],
                 ),
@@ -69,16 +72,14 @@ class InfoCard extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       '2.00 PM - 19/02/2021',
-                      style: Theme.of(context).textTheme.subtitle2,
+                      style: textTheme.subtitle2,
                     ),
                     TextButton(
                       onPressed: () {},
                       child: Text(
                         'Read more',
-                        style: TextStyle(
-                          color: Theme.of(context).primaryColor,
-                          fontSize: 16,
-                        ),
+                        style: textTheme.bodyText2!
+                            .copyWith(color: Theme.of(context).primaryColor),
                       ),
                     )
                   ],

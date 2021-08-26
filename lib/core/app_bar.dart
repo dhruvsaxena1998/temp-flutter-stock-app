@@ -4,14 +4,14 @@ import 'package:stokish_flutter/utils/constants.dart';
 PreferredSizeWidget _appBar(
   BuildContext context, {
   required Widget child,
-  double height = 45,
+  double height = MagicNumbers.appBarHeight,
 }) {
   return PreferredSize(
     preferredSize: Size.fromHeight(height),
     child: SafeArea(
       child: Container(
         width: double.infinity,
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: MagicNumbers.padding),
         decoration: BoxDecoration(
           color: Theme.of(context).backgroundColor,
         ),
@@ -25,12 +25,11 @@ PreferredSizeWidget _appBar(
 PreferredSizeWidget HomeAppBar(BuildContext context) {
   return _appBar(
     context,
-    height: 100,
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         const SizedBox(
-          height: 10,
+          height: MagicNumbers.sizedBoxHeight,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -40,11 +39,11 @@ PreferredSizeWidget HomeAppBar(BuildContext context) {
                 InkWell(
                   onTap: () {},
                   child: const CircleAvatar(
-                    backgroundImage: NetworkImage(Constants.avatar),
+                    backgroundImage: NetworkImage(placeholderAvatar),
                   ),
                 ),
                 const SizedBox(
-                  width: 10,
+                  width: MagicNumbers.sizedBoxHeight,
                 ),
                 Text(
                   'Hi, John',
@@ -62,7 +61,7 @@ PreferredSizeWidget HomeAppBar(BuildContext context) {
           ],
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
+          padding: const EdgeInsets.symmetric(vertical: MagicNumbers.padding),
           child: Text(
             'Welcome back ,',
             style: Theme.of(context).textTheme.headline5,
