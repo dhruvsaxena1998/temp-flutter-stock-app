@@ -41,9 +41,12 @@ class InfoCard extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
+          Container(
             padding: const EdgeInsets.symmetric(
               horizontal: MagicNumbers.padding,
+            ),
+            margin: const EdgeInsets.symmetric(
+              horizontal: MagicNumbers.margin,
             ),
             child: Column(
               children: <Widget>[

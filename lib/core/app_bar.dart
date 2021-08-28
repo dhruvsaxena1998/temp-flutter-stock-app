@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:stokish_flutter/utils/constants.dart';
 
 PreferredSizeWidget _appBar(
@@ -11,6 +12,7 @@ PreferredSizeWidget _appBar(
     child: SafeArea(
       child: Container(
         width: double.infinity,
+        margin: const EdgeInsets.all(MagicNumbers.margin),
         padding: const EdgeInsets.symmetric(horizontal: MagicNumbers.padding),
         decoration: BoxDecoration(
           color: Theme.of(context).backgroundColor,
@@ -25,48 +27,79 @@ PreferredSizeWidget _appBar(
 PreferredSizeWidget HomeAppBar(BuildContext context) {
   return _appBar(
     context,
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        const SizedBox(
-          height: MagicNumbers.sizedBoxHeight,
+        InkWell(
+          onTap: () {},
+          child: SvgPicture.asset(
+            AppIcons.menu,
+            height: FontSize.svgIcon,
+            color: Theme.of(context).iconTheme.color,
+          ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Row(
-              children: <Widget>[
-                InkWell(
-                  onTap: () {},
-                  child: const CircleAvatar(
-                    backgroundImage: NetworkImage(placeholderAvatar),
-                  ),
-                ),
-                const SizedBox(
-                  width: MagicNumbers.sizedBoxHeight,
-                ),
-                Text(
-                  'Hi, John',
-                  style: Theme.of(context).textTheme.caption,
+        InkWell(
+          onTap: () {},
+          child: Container(
+            decoration: BoxDecoration(
+              color: Theme.of(context).primaryColor,
+              borderRadius: BorderRadius.circular(
+                MagicNumbers.borderRadius,
+              ),
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                  blurRadius: MagicNumbers.blurRadius,
+                  color: Theme.of(context).cardColor,
                 )
               ],
             ),
-            InkWell(
-              onTap: () {},
-              child: Icon(
-                Icons.menu,
-                color: Theme.of(context).iconTheme.color,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(
+                MagicNumbers.borderRadius,
+              ),
+              child: Image.asset(
+                placeholderAvatar,
+                height: double.infinity,
+                fit: BoxFit.cover,
               ),
             ),
-          ],
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: MagicNumbers.padding),
-          child: Text(
-            'Welcome back ,',
-            style: Theme.of(context).textTheme.headline5,
           ),
-        ),
+        )
+      ],
+    ),
+  );
+}
+
+// ignore: non_constant_identifier_names
+PreferredSizeWidget CustomAppBar(BuildContext context, {String? title}) {
+  final IconThemeData iconTheme = Theme.of(context).iconTheme;
+  return _appBar(
+    context,
+    child: Row(
+      children: <Widget>[
+        if (Navigator.canPop(context))
+          InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Icon(
+              Icons.arrow_back_ios,
+              color: iconTheme.color,
+              size: iconTheme.size,
+            ),
+          ),
+        if (title != null)
+          Row(
+            children: <Widget>[
+              const SizedBox(
+                width: MagicNumbers.sizedBoxWidth,
+              ),
+              Text(
+                title,
+                style: Theme.of(context).textTheme.headline6,
+              )
+            ],
+          )
       ],
     ),
   );

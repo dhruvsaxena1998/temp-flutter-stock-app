@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:stokish_flutter/pages/home/home_page.dart';
+import 'package:stokish_flutter/utils/methods.dart';
 
 import 'global/theme/theme_data.dart';
 
@@ -26,23 +26,17 @@ class App extends StatelessWidget {
         final Themes theme = watch(themeController);
         final ThemeData themeData = appTheme(theme);
 
-        SystemChrome.setSystemUIOverlayStyle(
-          SystemUiOverlayStyle(
-            statusBarColor: themeData.backgroundColor,
-            systemNavigationBarColor: themeData.backgroundColor,
-            statusBarIconBrightness:
-                theme == Themes.light ? Brightness.dark : Brightness.light,
-            systemNavigationBarIconBrightness:
-                theme == Themes.light ? Brightness.dark : Brightness.light,
-          ),
+        setSystemUiOverlayStyle(
+          theme: theme,
+          themeData: themeData,
         );
 
         return MaterialApp(
           title: 'Flutter Demo',
           theme: themeData,
-          home: const Home(),
           debugShowCheckedModeBanner: false,
           routes: routes,
+          initialRoute: Home.route,
         );
       },
     );

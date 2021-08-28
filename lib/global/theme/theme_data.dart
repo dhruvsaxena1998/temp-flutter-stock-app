@@ -26,6 +26,7 @@ final ThemeData light = ThemeData(
   ),
   iconTheme: const IconThemeData(
     color: ThemeColors.titleLight,
+    size: FontSize.icon,
   ),
   textTheme: TextTheme(
     headline4: GoogleFonts.fredokaOne(

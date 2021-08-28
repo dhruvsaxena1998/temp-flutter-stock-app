@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:stokish_flutter/core/app_bar.dart';
 import 'package:stokish_flutter/global/theme/theme_data.dart';
 import 'package:stokish_flutter/providers/theme_provider.dart';
 
@@ -18,6 +19,7 @@ class _SettingsPageState extends State<SettingsPage> {
     final TextTheme textTheme = Theme.of(context).textTheme;
     final Color primary = Theme.of(context).primaryColor;
     return Scaffold(
+      appBar: CustomAppBar(context, title: 'Settings'),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,9 +38,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     theme = Themes.light;
                   });
 
-                  context
-                      .read(themeController.notifier)
-                      .updateTheme(Themes.light);
+                  context.read(themeController.notifier).setTheme(Themes.light);
                 },
               ),
             ),

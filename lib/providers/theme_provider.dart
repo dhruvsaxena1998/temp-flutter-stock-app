@@ -21,7 +21,7 @@ class ThemeProvider extends StateNotifier<Themes> {
     state = theme;
   }
 
-  void updateTheme(Themes theme) {
+  void setTheme(Themes theme) {
     state = theme;
     _setThemeToStorage(theme);
   }
