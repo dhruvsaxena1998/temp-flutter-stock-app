@@ -29,17 +29,19 @@ final ThemeData light = ThemeData(
     size: FontSize.icon,
   ),
   textTheme: TextTheme(
-    headline4: GoogleFonts.fredokaOne(
+    headline4: GoogleFonts.tenorSans(
       color: ThemeColors.titleLight,
       fontSize: FontSize.headline4,
     ),
-    headline5: GoogleFonts.fredokaOne(
+    headline5: GoogleFonts.tenorSans(
       color: ThemeColors.titleLight,
       fontSize: FontSize.headline5,
+      fontWeight: FontWeight.bold,
     ),
-    headline6: GoogleFonts.fredokaOne(
+    headline6: GoogleFonts.tenorSans(
       color: ThemeColors.titleLight,
       fontSize: FontSize.headline6,
+      fontWeight: FontWeight.bold,
     ),
     bodyText1: GoogleFonts.inter(
       color: ThemeColors.bodyLight,

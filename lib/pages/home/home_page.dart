@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:stokish_flutter/core/app_bar.dart';
+import 'package:stokish_flutter/pages/home/widgets/article_list_item.dart';
 import 'package:stokish_flutter/utils/constants.dart';
-import 'package:stokish_flutter/widgets/info_card.dart';
+import 'package:stokish_flutter/pages/home/widgets/top_rated_article_card.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -18,7 +19,11 @@ class Home extends StatelessWidget {
             padding: const EdgeInsets.all(MagicNumbers.padding),
             child: Column(
               children: const <Widget>[
-                InfoCard(),
+                TopRatedArticleCard(),
+                Divider(
+                  thickness: MagicNumbers.dividerThickness,
+                ),
+                ArticleListItem(),
               ],
             ),
           ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:stokish_flutter/pages/home/home_page.dart';
-import 'package:stokish_flutter/utils/methods.dart';
+import 'package:stokish_flutter/shared/methods.dart';
 
 import 'global/theme/theme_data.dart';
 
