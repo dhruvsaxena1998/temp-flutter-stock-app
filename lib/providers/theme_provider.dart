@@ -1,7 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:stokish_flutter/global/theme/theme_data.dart';
-import 'package:stokish_flutter/utils/constants.dart';
+
+import '../global/theme/theme_data.dart';
+import '../utils/constants.dart';
 
 final StateNotifierProvider<ThemeProvider, Themes> themeController =
     StateNotifierProvider<ThemeProvider, Themes>((_) => ThemeProvider());

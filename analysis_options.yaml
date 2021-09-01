@@ -26,3 +26,6 @@ linter:
 
     # Ignore just setters to change properties
     use_setters_to_change_properties: false
+
+    # Use relative file imports for /lib
+    prefer_relative_imports: true

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:stokish_flutter/global/theme/colors.dart';
-import 'package:stokish_flutter/utils/constants.dart';
+import '../../utils/constants.dart';
+
+import 'colors.dart';
 
 enum Themes { light }
 

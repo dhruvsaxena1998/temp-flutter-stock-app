@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:stokish_flutter/global/theme/theme_data.dart';
+
+import '../global/theme/theme_data.dart';
 
 void setSystemUiOverlayStyle({
   required Themes theme,

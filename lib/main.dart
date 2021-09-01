@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:stokish_flutter/pages/home/home_page.dart';
-import 'package:stokish_flutter/shared/methods.dart';
 
+import 'app.dart';
 import 'global/theme/theme_data.dart';
-
 import 'providers/theme_provider.dart';
-import 'routes/routes.dart';
+import 'shared/methods.dart';
 
 void main() {
   runApp(const ProviderScope(child: App()));
@@ -31,13 +29,7 @@ class App extends StatelessWidget {
           themeData: themeData,
         );
 
-        return MaterialApp(
-          title: 'Flutter Demo',
-          theme: themeData,
-          debugShowCheckedModeBanner: false,
-          routes: routes,
-          initialRoute: Home.route,
-        );
+        return app(theme: themeData);
       },
     );
   }

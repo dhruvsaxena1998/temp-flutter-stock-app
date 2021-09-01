@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:stokish_flutter/core/app_bar.dart';
-import 'package:stokish_flutter/pages/home/widgets/article_list_item.dart';
-import 'package:stokish_flutter/utils/constants.dart';
-import 'package:stokish_flutter/pages/home/widgets/top_rated_article_card.dart';
+
+import '../../core/app_bar.dart';
+import '../../utils/constants.dart';
+
+import 'widgets/article_list_item.dart';
+import 'widgets/top_rated_article_card.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);

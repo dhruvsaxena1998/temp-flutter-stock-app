@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:stokish_flutter/core/app_bar.dart';
-import 'package:stokish_flutter/global/theme/theme_data.dart';
-import 'package:stokish_flutter/providers/theme_provider.dart';
+
+import '../../core/app_bar.dart';
+import '../../global/theme/theme_data.dart';
+import '../../providers/theme_provider.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);

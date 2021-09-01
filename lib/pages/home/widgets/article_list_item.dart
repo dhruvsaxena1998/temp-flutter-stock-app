@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:stokish_flutter/utils/constants.dart';
+
+import '../../../utils/constants.dart';
 
 class ArticleListItem extends StatelessWidget {
   const ArticleListItem({Key? key}) : super(key: key);

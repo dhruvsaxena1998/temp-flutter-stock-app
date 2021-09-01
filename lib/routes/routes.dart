@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:stokish_flutter/pages/home/home_page.dart';
 
-import 'package:stokish_flutter/pages/settings/settings_page.dart';
+import '../pages/home/home_page.dart';
+import '../pages/settings/settings_page.dart';
 
 final Map<String, Widget Function(BuildContext)> routes =
     <String, WidgetBuilder>{

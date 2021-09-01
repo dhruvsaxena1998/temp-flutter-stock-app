@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:stokish_flutter/utils/constants.dart';
+
+import '../../../utils/constants.dart';
 
 class TopRatedArticleCard extends StatelessWidget {
   const TopRatedArticleCard({Key? key}) : super(key: key);

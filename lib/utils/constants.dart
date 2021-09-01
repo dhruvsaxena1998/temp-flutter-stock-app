@@ -45,4 +45,5 @@ const String placeholderAvatar = 'assets/images/avataaars.png';
 const String placeholderItemImage =
     'https://images.unsplash.com/photo-1616784660528-e1824a8ae041?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80';
 const String placeholderText =
+    // ignore: lines_longer_than_80_chars
     'Lorem ipsum dolor sit amet consectetur adipisicing elit.Porro laboriosam recusandae dolorum libero. Nostrum rem earum, consequuntur odio eligendi nesciunt ab dolor? Sint possimus ipsa alias molestias? Reprehenderit, consequatur nisi.';
